@@ -13,22 +13,10 @@ use App\Entity\Grade;
  */
 class TestController extends AbstractController
 {
-     /**
-     * @Route("/", name="index", methods={"GET"})
+    /**
+     * @Route("/all", name="index", methods={"GET"})
      */
     public function index(): Response
-    {
-        
-
-        return $this->json([
-            "data" => "ok"
-        ]);
-    }
-
-    /**
-     * @Route("/all", name="all", methods={"GET"})
-     */
-    public function all(): Response
     {
         $grade = $this->getDoctrine()->getRepository(Grade::class)->findAll();
 
